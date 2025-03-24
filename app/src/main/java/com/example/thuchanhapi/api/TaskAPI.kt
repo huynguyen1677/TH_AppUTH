@@ -6,5 +6,6 @@ import retrofit2.http.GET
 
 interface TaskAPI {
     @GET("researchUTH/tasks")
+//    @GET("researchUTH/tasks/1")
     suspend fun getTasks(): Response<TaskResponse>
 }

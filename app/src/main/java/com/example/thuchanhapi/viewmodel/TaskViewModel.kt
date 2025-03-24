@@ -13,6 +13,9 @@ class TaskViewModel : ViewModel() {
     private val _tasks = MutableLiveData<List<Task>>()
     val tasks: LiveData<List<Task>> = _tasks
 
+    private val _isLoading = MutableLiveData(true) // Bắt đầu với trạng thái đang tải
+    val isLoading: LiveData<Boolean> = _isLoading
+
     init {
         getTasks()
     }
@@ -31,6 +34,8 @@ class TaskViewModel : ViewModel() {
             } catch (e: Exception) {
                 // Handle exceptions (e.g., log the exception)
                 println("Exception: ${e.message}")
+            } finally {
+                _isLoading.value = false // Khi tải xong, đặt isLoading thành false
             }
         }
     }
