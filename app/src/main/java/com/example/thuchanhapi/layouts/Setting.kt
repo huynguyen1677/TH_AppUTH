@@ -5,6 +5,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
 @Composable
-fun SettingApp(modifier: Modifier = Modifier, navController: NavHostController) {
+fun SettingApp() {
     
 }

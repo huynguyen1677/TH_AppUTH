@@ -63,8 +63,10 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.8.9")
 
     // If you use livedata
-    implementation("androidx.compose.runtime:runtime-livedata:1.5.4")
     implementation("androidx.compose.material3:material3:1.1.2")
+
+
+    implementation("androidx.compose.runtime:runtime-livedata:1.7.2")// Thay thế 1.7.2 bằng version phù hợp
 
 
 
