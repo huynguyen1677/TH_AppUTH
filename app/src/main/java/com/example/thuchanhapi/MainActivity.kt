@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.thuchanhapi.ui.theme.ThucHanhAPITheme
+import com.example.thuchanhapi.viewmodel.TaskViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ThucHanhAPITheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyAppNavigation(modifier =  Modifier.padding(innerPadding))
+                    MyAppNavigation(modifier =  Modifier.padding(innerPadding), taskViewModel = TaskViewModel())
                 }
             }
         }

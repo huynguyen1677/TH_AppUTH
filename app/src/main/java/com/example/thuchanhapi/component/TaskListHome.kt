@@ -1,6 +1,7 @@
 package com.example.thuchanhapi.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,12 +26,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.thuchanhapi.model.Task
+import com.example.thuchanhapi.ui.theme.high_color
+import com.example.thuchanhapi.ui.theme.low_color
+import com.example.thuchanhapi.ui.theme.medium_color
 import com.example.thuchanhapi.viewmodel.TaskViewModel
 
 
 @Composable
-fun TaskListHome(modifier: Modifier = Modifier ,taskViewModel: TaskViewModel = viewModel(),  ) {
+fun TaskListHome(modifier: Modifier = Modifier ,taskViewModel: TaskViewModel = viewModel(), navController: NavController ) {
     val tasks = taskViewModel.tasks.observeAsState(initial = emptyList())
     Column(
         modifier = Modifier
@@ -41,7 +46,7 @@ fun TaskListHome(modifier: Modifier = Modifier ,taskViewModel: TaskViewModel = v
             Spacer(modifier = Modifier.padding(8.dp))
             LazyColumn {
                 items(tasks.value) { task ->
-                    TaskItem(task = task)
+                    TaskItem(task = task, navController = navController)
                 }
             }
         }
@@ -49,7 +54,7 @@ fun TaskListHome(modifier: Modifier = Modifier ,taskViewModel: TaskViewModel = v
 }
 
 @Composable
-fun TaskItem(task: Task) {
+fun TaskItem(task: Task, navController: NavController) {
     var isChecked = remember { mutableStateOf(false) }
     val ColorCardList = listOf(
         Color(0xFFFFF1F1), // Hồng nhạt
@@ -66,14 +71,24 @@ fun TaskItem(task: Task) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp, 8.dp),
+            .padding(20.dp, 8.dp)
+            .clickable{
+                navController.navigate("detail/${task.id}")
+            },
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
 
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(randomColor)
+                .background(
+                    color = when (task.priority){
+                        "High" -> high_color
+                        "Medium" -> medium_color
+                        "Low" -> low_color
+                        else -> randomColor
+                    }
+                )
                 .padding(16.dp)
         ) {
 

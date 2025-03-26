@@ -17,7 +17,7 @@ import com.example.thuchanhapi.component.TaskListHome
 import com.example.thuchanhapi.viewmodel.TaskViewModel
 
 @Composable
-fun HomePage(viewModel: TaskViewModel = viewModel()) {
+fun HomePage(viewModel: TaskViewModel = viewModel(), navController: NavHostController) {
     val tasks = viewModel.tasks.observeAsState(emptyList()).value // Lấy danh sách công việc
     val isLoading = viewModel.isLoading.observeAsState(true).value
     Column(
@@ -32,7 +32,7 @@ fun HomePage(viewModel: TaskViewModel = viewModel()) {
                 EmptyTaskHome()
             }
             else -> {
-                TaskListHome()
+                TaskListHome(taskViewModel = viewModel, navController = navController)
             }
     }
 

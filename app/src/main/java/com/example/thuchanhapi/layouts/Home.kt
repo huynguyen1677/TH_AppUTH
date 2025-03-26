@@ -45,6 +45,7 @@ import com.example.thuchanhapi.R
 import com.example.thuchanhapi.pages.Calendar
 import com.example.thuchanhapi.pages.HomePage
 import com.example.thuchanhapi.ui.theme.Blue_text
+import com.example.thuchanhapi.viewmodel.TaskViewModel
 
 data class NavItem(val route: String, val icon: Int, val label: String)
 
@@ -213,7 +214,7 @@ fun MainScreen(modifier: Modifier = Modifier, navController: NavHostController) 
 @Composable
 fun ContentScreen(modifier: Modifier = Modifier,navController: NavHostController, selectedIndex: Int) {
     when(selectedIndex) {
-        0 -> HomePage()
+        0 -> HomePage(viewModel = TaskViewModel(),navController)
         1 -> Calendar()
         2 -> TaskCheck()
         3 -> SettingApp()
