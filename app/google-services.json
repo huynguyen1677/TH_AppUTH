@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1015499092109",
+    "project_id": "thuchanhapi77",
+    "storage_bucket": "thuchanhapi77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015499092109:android:2244c5e27a0c5f9f3932c4",
+        "android_client_info": {
+          "package_name": "com.example.thuchanhapi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgTGbRX2QnH6tDKpdX3vSSxXu4Cv-lYYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
