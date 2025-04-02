@@ -65,11 +65,17 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.8.9")
 
     // If you use livedata
-    implementation("androidx.compose.material3:material3:1.1.2")
+    implementation("androidx.compose.material3:material3:1.3.1")
 
 
-    implementation("androidx.compose.runtime:runtime-livedata:1.7.2")// Thay thế 1.7.2 bằng version phù hợp
+    implementation("androidx.compose.runtime:runtime-livedata:1.7.8")// Thay thế 1.7.2 bằng version phù hợp
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation ("io.coil-kt:coil-compose:2.5.0")  // For Jetpack Compose integration
+    implementation ("io.coil-kt:coil:2.5.0")         // For general image loading support
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
+
+    implementation ("com.google.firebase:firebase-auth:22.1.2")
+    implementation ("com.google.android.gms:play-services-auth:21.1.1")
+
 
 }
