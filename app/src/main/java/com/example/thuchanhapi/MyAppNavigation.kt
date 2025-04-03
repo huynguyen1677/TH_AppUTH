@@ -96,9 +96,12 @@ fun MyAppNavigation(
                             ).build()
                         )
                     }
-                }
+                },
+                navController
             )
         }
+//        composable("signup") { SignUpScreen(modifier, navController) }
+
         composable("profile") {
             ProfileScreen(
                 userData = googleAuthUiClient.getSignedInUser(),
@@ -108,7 +111,8 @@ fun MyAppNavigation(
                         Toast.makeText(context, "Signed out", Toast.LENGTH_LONG).show()
                         navController.popBackStack()
                     }
-                }
+                },
+                navController
             )
         }
 

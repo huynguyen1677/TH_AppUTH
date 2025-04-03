@@ -126,7 +126,8 @@ fun ContentScreen(modifier: Modifier = Modifier,navController: NavHostController
                     Toast.makeText(context, "Signed out", Toast.LENGTH_LONG).show()
                     navController.popBackStack()
                 }
-            }
+            },
+            navController
         )
     }
 }
