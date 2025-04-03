@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.thuchanhapi.R
+import com.example.thuchanhapi.ui.theme.Blue_text
 
 @Composable
 fun GetStartedSecond(modifier: Modifier = Modifier,navController: NavHostController) {
@@ -57,7 +58,7 @@ fun GetStartedSecond(modifier: Modifier = Modifier,navController: NavHostControl
                 Box(
                     modifier = Modifier
                         .size(10.dp)
-                        .background(Color.Blue, RoundedCornerShape(50))
+                        .background(Blue_text, RoundedCornerShape(50))
                 )
                 Box(
                     modifier = Modifier
@@ -69,7 +70,7 @@ fun GetStartedSecond(modifier: Modifier = Modifier,navController: NavHostControl
             Text(
                 text = "Skip",
                 fontSize = 16.sp,
-                color = Color.Blue,
+                color = Blue_text,
                 modifier = Modifier.clickable { navController.navigate("login") }
             )
         }
@@ -107,14 +108,14 @@ fun GetStartedSecond(modifier: Modifier = Modifier,navController: NavHostControl
                 modifier = Modifier
                     .size(30.dp) // Kích thước lớn hơn
                     .clickable { navController.navigate("page2") },
-                tint = Color.Black
+                tint = Blue_text
 
             )
 
             Button(
                 onClick = { navController.navigate("page4") },
                 shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(Color.Blue),
+                colors = ButtonDefaults.buttonColors(Blue_text),
                 modifier = Modifier
                     .fillMaxWidth(0.7f)
                     .height(50.dp)

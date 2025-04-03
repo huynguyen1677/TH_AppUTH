@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.thuchanhapi.R
+import com.example.thuchanhapi.ui.theme.Blue_text
 
 @Composable
 fun GetStartedThird(modifier: Modifier = Modifier,navController: NavHostController) {
@@ -62,14 +63,14 @@ fun GetStartedThird(modifier: Modifier = Modifier,navController: NavHostControll
                 Box(
                     modifier = Modifier
                         .size(10.dp)
-                        .background(Color.Blue, RoundedCornerShape(50))
+                        .background(Blue_text, RoundedCornerShape(50))
                 )
             }
 
             Text(
                 text = "Skip",
                 fontSize = 16.sp,
-                color = Color.Blue,
+                color = Blue_text,
                 modifier = Modifier.clickable { navController.navigate("sign_in") }
             )
         }
@@ -107,13 +108,13 @@ fun GetStartedThird(modifier: Modifier = Modifier,navController: NavHostControll
                 modifier = Modifier
                     .size(30.dp)
                     .clickable { navController.navigate("page3") },
-                tint = Color.Blue
+                tint = Blue_text
             )
 
             Button(
                 onClick = { navController.navigate("login") },
                 shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(Color.Blue),
+                colors = ButtonDefaults.buttonColors(Blue_text),
                 modifier = Modifier
                     .fillMaxWidth(0.7f)
                     .height(50.dp)

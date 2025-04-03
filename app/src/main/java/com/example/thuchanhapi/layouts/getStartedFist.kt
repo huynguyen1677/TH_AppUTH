@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.thuchanhapi.R
+import com.example.thuchanhapi.ui.theme.Blue_text
 
 @Composable
 fun GetStartedFist(modifier: Modifier = Modifier,navController: NavHostController) {
@@ -51,7 +52,7 @@ fun GetStartedFist(modifier: Modifier = Modifier,navController: NavHostControlle
                 Box(
                     modifier = Modifier
                         .size(10.dp)
-                        .background(Color.Blue, RoundedCornerShape(50))
+                        .background(Blue_text, RoundedCornerShape(50))
                 )
                 Box(
                     modifier = Modifier
@@ -68,7 +69,7 @@ fun GetStartedFist(modifier: Modifier = Modifier,navController: NavHostControlle
             Text(
                 text = "Skip",
                 fontSize = 16.sp,
-                color = Color.Blue,
+                color = Blue_text,
                 modifier = Modifier.clickable { navController.navigate("login") }
             )
         }
@@ -97,7 +98,7 @@ fun GetStartedFist(modifier: Modifier = Modifier,navController: NavHostControlle
         Button(
             onClick = { navController.navigate("page3") },
             shape = RoundedCornerShape(12.dp),
-            colors = ButtonDefaults.buttonColors(Color.Blue),
+            colors = ButtonDefaults.buttonColors(Blue_text),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)

@@ -1,10 +1,7 @@
 package com.example.thuchanhapi.pages
 
 import android.content.Intent
-import android.net.Uri
-import android.util.Log
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -31,22 +28,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Checkbox
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
-import com.example.thuchanhapi.component.TaskListHome
 import com.example.thuchanhapi.R
 import com.example.thuchanhapi.model.Attachment
 import com.example.thuchanhapi.model.Subtask
-import com.example.thuchanhapi.model.Task
 import com.example.thuchanhapi.ui.theme.Blue_text
 import com.example.thuchanhapi.viewmodel.TaskViewModel
-import androidx.core.net.toUri
 
 @Composable
 fun DetailPage(modifier: Modifier = Modifier, viewModel: TaskViewModel, navController: NavController,taskID: Int) {
@@ -118,11 +111,15 @@ fun DetailPage(modifier: Modifier = Modifier, viewModel: TaskViewModel, navContr
 
         // Subtasks
         Text(text = "Subtasks", fontSize = 16.sp, fontWeight = FontWeight.Bold)
-        task?.subtasks?.let { SubtaskListView(subtasks = it) }
+        task?.subtasks?.let {
+            SubtaskListView(subtasks = it)
+        }
 
         // Attachments
         Text(text = "Attachments", fontSize = 16.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 16.dp))
-        task?.attachments?.let { AttachmentListView(attachments = it) }
+        task?.attachments?.let {
+            AttachmentListView(attachments = it)
+        }
     }
 
 }
@@ -172,17 +169,15 @@ fun SubtaskItem(subtask: Subtask, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .padding(8.dp)
-            .fillMaxWidth(), // Make the row fill the width for better touch target
+            .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Checkbox(
             checked = subtask.isCompleted,
-            onCheckedChange = { /* Handle checkbox change */ }
+            onCheckedChange = {}
         )
         Column(modifier = Modifier.padding(start = 8.dp)) {
             Text(text = subtask.title)
-            // You can add more details here if needed, e.g., the ID
-            // Text(text = "ID: ${subtask.id}")
         }
     }
 }
@@ -214,8 +209,7 @@ fun AttachmentItem(attachment: Attachment, modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier.padding(8.dp)
         ) {
-            Text(text = attachment.fileName)
-            Text(text = attachment.fileUrl)
+            Text(text = attachment.fileName,)
         }
     }
 }
